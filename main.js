@@ -1,4 +1,7 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+//const iohook = require('iohook')
+const EventEmitter = require('events')
+const ks = require('node-key-sender')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -19,6 +22,11 @@ function createWindow () {
 
   // Open the DevTools.
   win.webContents.openDevTools()
+
+  ipcMain.on('switch-windows', (event, arg) => {
+    console.log('switching windows');
+    ks.sendCombination(['alt', 'tab']);
+  });
 
   // Emitted when the window is closed.
   win.on('closed', () => {

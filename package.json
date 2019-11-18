@@ -18,6 +18,14 @@
   },
   "homepage": "https://github.com/cjs8487/DevKeys#readme",
   "devDependencies": {
-    "electron": "^7.1.1"
+    "electron": "^7.1.1",
+    "node-key-sender": "^1.0.11"
+  },
+  "dependencies": {
+    "iohook": "^0.6.1"
+  },
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "1.6.0"
   }
 }
