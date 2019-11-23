@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 //const iohook = require('iohook')
 const EventEmitter = require('events')
 const ks = require('node-key-sender')
+const robot = require('robotjs');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,7 +26,8 @@ function createWindow () {
 
   ipcMain.on('switch-windows', (event, arg) => {
     console.log('switching windows');
-    ks.sendCombination(['alt', 'tab']);
+    robot.keyTap('tab', ['command']);
+    robot.keyTap('command');
   });
 
   // Emitted when the window is closed.
