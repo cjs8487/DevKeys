@@ -23,6 +23,9 @@
     "node-key-sender": "^1.0.11"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "react": "^16.12.0",
     "robotjs": "git://github.com/octalmage/robotjs.git#fix/node13"
   },
   "cmake-js": {
