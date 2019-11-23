@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const isDev = require('electron-is-dev')
 //const iohook = require('iohook')
 const EventEmitter = require('events')
-const ks = require('node-key-sender')
 const robot = require('robotjs');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -19,7 +19,11 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('index.html')
+  win.loadURL(
+    isDev
+      ? 'http://localhost:3000'
+      : `file://${path.join(__dirname, '../build/index.html')}`,
+  )
 
   // Open the DevTools.
   win.webContents.openDevTools()

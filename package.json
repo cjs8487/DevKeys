@@ -1,35 +1,55 @@
 {
-  "name": "devkeys",
+  "name": "dev-keys",
   "version": "0.0.1",
-  "description": "A lightweight and highly customizable shortcuts app",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cjs8487/DevKeys.git"
-  },
-  "author": "cjs8487",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/cjs8487/DevKeys/issues"
-  },
-  "homepage": "https://github.com/cjs8487/DevKeys#readme",
-  "devDependencies": {
-    "electron": "^7.1.2",
-    "electron-rebuild": "^1.8.8",
-    "node-key-sender": "^1.0.11"
+  "private": true,
+  "homepage": "./",
+  "main": "src/main.js",
+  "build": {
+    "appId": "com.deepwelldevelopment.devkeys",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "category": "your.app.category.type",
+      "iconUrl": "path-to-icon.png"
+    },
+    "mac": {
+      "category": "your.app.category.type",
+      "iconUrl": "path-to-icon.png"
+    }
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
+    "electron": "^7.1.2",
+    "electron-is-dev": "^1.1.0",
     "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0",
     "robotjs": "git://github.com/octalmage/robotjs.git#fix/node13"
   },
-  "cmake-js": {
-    "runtime": "electron",
-    "runtimeVersion": "1.6.0"
+  "scripts": {
+    "electron": "electron .",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron-builder": "^21.2.0",
+    "electron-rebuild": "^1.8.8"
   }
 }
