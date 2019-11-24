@@ -19,6 +19,7 @@
     }
   },
   "dependencies": {
+    "cross-env": "^6.0.3",
     "electron": "^7.1.2",
     "electron-is-dev": "^1.1.0",
     "react": "^16.12.0",
@@ -27,8 +28,8 @@
     "robotjs": "git://github.com/octalmage/robotjs.git#fix/node13"
   },
   "scripts": {
-    "electron": "electron .",
-    "start": "react-scripts start",
+    "electron": "cross-env NODE_ENV=dev nodemon --exec \"\"electron .\"\"",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -50,6 +51,8 @@
   },
   "devDependencies": {
     "electron-builder": "^21.2.0",
-    "electron-rebuild": "^1.8.8"
+    "electron-rebuild": "^1.8.8",
+    "electron-reload": "^1.5.0",
+    "nodemon": "^2.0.1"
   }
 }
